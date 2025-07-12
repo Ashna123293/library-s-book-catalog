@@ -85,29 +85,4 @@ public class Book {
                 ", available=" + available +
                 '}';
     }
-
-    // equals() and hashCode() methods
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Book book = (Book) o;
-
-        if (available != book.available) return false;
-        if (!id.equals(book.id)) return false;
-        if (!title.equals(book.title)) return false;
-        if (!author.equals(book.author)) return false;
-        return isbn.equals(book.isbn);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + title.hashCode();
-        result = 31 * result + author.hashCode();
-        result = 31 * result + isbn.hashCode();
-        result = 31 * result + (available ? 1 : 0);
-        return result;
-    }
 }
